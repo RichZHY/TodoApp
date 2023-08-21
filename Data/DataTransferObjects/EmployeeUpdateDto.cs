@@ -1,12 +1,17 @@
 ﻿using System;
-using System.Reflection.Metadata.Ecma335;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace TodoApp.API.Models
+namespace Data.DataTransferObjects
 {
-    public class Employee
+    public class EmployeeUpdateDto
     {
-        public int Id { get; set; }
+        [Required(ErrorMessage = "Firstname is required")]
         public string? FirstName { get; set; }
+        [Required(ErrorMessage = "Lastname is required")]
         public string? LastName { get; set; }
         public string? Email { get; set; }
         public DateTime? Dob { get; set; }
@@ -15,6 +20,5 @@ namespace TodoApp.API.Models
         public string? Company { get; set; }
         public int Experience { get; set; }
         public int Package { get; set; }
-
     }
 }
